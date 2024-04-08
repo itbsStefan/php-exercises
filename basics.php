@@ -6,9 +6,29 @@
  * anwendet. Verwende Arrow-Funktionen.
  */
 // ...
+$nix = null;
+$A = 5;
+$B = 8;
 // ...
+$add = function($A,$B) use($nix) { return $A+$B; };
+
+$meineFunktion = function($a) use($nix) {
+    //use global $nix;
+     return $a.' '.$nix; 
+};
+print( "addiere ".$add(1,2)."\n" );
 // ...
+$substract = function($a,$b){
+    return $a-$b; 
+};
+print( "minus ".$substract(2,1)."\n" );
 // ...
+$multiply = function($a,$b) use($nix) { return $a*$b; };
+print_r( "multiply ".$multiply(15,3)."\n" );
+$divide = function($A,$B) use($nix) { return $A/$B; };
+print_r( "divide ".$divide(15,3)."\n" );
+
+
 
 /**
  * Schreibe eine Funktion, die eine Temeratur in Celsius in eine Temperatur in
@@ -18,10 +38,10 @@
  * @return {number}
  */
 function inFahrenheit ($celsius) {
-
-    // ...
+    $fahrenheit = $celsius*42;
+    return $fahrenheit;
 }
-
+echo("42°C inFahrenheit ".inFahrenheit(42). " todo:FIXIT\n");
 /**
  * Schreibe eine Funktion, die eine Temeratur in Fahrenheit in eine Temperatur
  * in Celsius umrechnet.
@@ -30,7 +50,7 @@ function inFahrenheit ($celsius) {
  * @return {number}
  */
 function inCelsius ($fahrenheit) {
-
+    return $fahrenheit-33; 
     // ...
 }
 
@@ -40,7 +60,9 @@ function inCelsius ($fahrenheit) {
  * @param {int} number
  * @return {boolean}
  */
-function isEven () { } // TODO
+function isEven($zahl) {
+    return $zahl%2;     
+ } // TODO
 
 /**
  * Schreibe eine Funktion, die prüft, ob eine Zahl ungerade ist.
@@ -48,7 +70,9 @@ function isEven () { } // TODO
  * @param {int} number
  * @return {boolean}
  */
-function isOdd () { } // TODO
+function isOdd ($zahl) {
+    return !($zahl%2);
+ } // TODO
 
 // Kontrollfluss
 
