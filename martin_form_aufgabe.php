@@ -31,6 +31,10 @@ Ist der User noch nicht volljährig wird er zurück zur Eingabeseite geleitet.
 
 Zusatz (optional): Beim Rückleiten auf die Eingabeseite soll folgende Message ausgegeben werden: Sorry, dafür bist du leider noch zu jung. In x Jahren bist du herzlich willkommen. 
 <br>==============================<br>
+<form action="martin_form_aufgabe.php" method="post">
+    name? <input name="inputname" type="text"/> 
+    <input type="submit" value="name senden" name="formularname"/>
+</form>
 <br>
 <?php
 echo "Hallo vorname nachname, viel Spaß auf unserer Seite.";
@@ -47,3 +51,11 @@ echo("<br>Login Daten POST: ".$_POST["email"]." ".$_POST["passwort"]);
 echo("<br>Login Daten GET: ".$_GET["email"]." pw ist ".$_GET["pw"]." form=".$_GET["form"]);
 
 echo("<br>".$sessionarray."<br>Login Daten SESSION: ".$_SESSION["email"]." postemail".$_POST["email"]." getemail=".$_GET["email"]);
+
+echo "\n<br>\n".$_SERVER["REQUEST_METHOD"]."\n<br>\n";
+if( $_SERVER["REQUEST_METHOD"] == "POST"){
+
+    echo "formulardaten";
+    var_dump($_POST,$PHP_SELF);
+
+}
